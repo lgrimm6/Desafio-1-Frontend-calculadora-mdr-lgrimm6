@@ -1,0 +1,82 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #f5f7fa;
+}
+
+.Container {
+  margin: 0 auto;
+  display: flex;
+  width: 608px;
+  height: 390px;
+  border: 1px solid #d1dce3;
+  border-radius: 4px;
+  position: relative;
+}
+.Container::after {
+  content: "";
+  display: flex;
+  height: 2px;
+  width: 95%;
+  top: -2px;
+  left: 2px;
+  position: absolute;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  background-color: #d1dce3;
+}
+
+.Container-Left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.Container-Left > h1 {
+  font-size: 24px;
+  color: #656565;
+  margin-bottom: 22px;
+}
+
+.Container-Right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 35%;
+  background: rgba(209, 220, 227, 0.18);
+}
+
+.Container-Right > h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3d75bb;
+  margin-top: 84px;
+  margin-left: 33px;
+  margin-bottom: 19px;
+}
+.Container-Right > h2::after {
+  content: "";
+  display: flex;
+  width: 160px;
+  margin-top: 5px;
+  border: 1px solid #5d9cec;
+  opacity: 0.3;
+}
+
+.Container-Right > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+  color: #3d75bb;
+  font-weight: 400;
+  margin-left: 33px;
+  margin-bottom: 83px;
+}
