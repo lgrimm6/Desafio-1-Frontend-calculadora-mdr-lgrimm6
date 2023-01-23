@@ -76,10 +76,6 @@ const Form = ({ setResultDays }: any) => {
           name={"installments"}
           arrayOptions={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
         ></Select>
-        <span className="yupError">
-          {typeof errors.installments?.message === "string" &&
-            errors.installments?.message}
-        </span>
         <Input
           label="Informe o percentual de MDR *"
           register={register}
