@@ -20,7 +20,7 @@ const Form = ({ setResultDays }: any) => {
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { isValid, errors },
   } = useForm({
     resolver: yupResolver(schemaForm),
   });
@@ -66,6 +66,9 @@ const Form = ({ setResultDays }: any) => {
           register={register}
           name="amount"
         ></Input>
+        <span className="yupError">
+          {typeof errors.amount?.message === "string" && errors.amount?.message}
+        </span>
         <Select
           label={"Em quantas parcelas *"}
           observation={"Máximo de 12 parcelas"}
@@ -73,17 +76,27 @@ const Form = ({ setResultDays }: any) => {
           name={"installments"}
           arrayOptions={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
         ></Select>
+        <span className="yupError">
+          {typeof errors.installments?.message === "string" &&
+            errors.installments?.message}
+        </span>
         <Input
           label="Informe o percentual de MDR *"
           register={register}
           name="mdr"
         ></Input>
+        <span className="yupError">
+          {typeof errors.mdr?.message === "string" && errors.mdr?.message}
+        </span>
         <Input
           label="Informe em quantos dias deseja receber"
           placeholder="Ex: 5,20,30,50"
           register={register}
           name="days"
         ></Input>
+        <span className="yupError">
+          {typeof errors.days?.message === "string" && errors.days?.message}
+        </span>
         <button disabled={!isValid} id="simulationButton">
           {mutation.isLoading ? "Calculando" : "Simular"}
         </button>
